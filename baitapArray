@@ -1,0 +1,54 @@
+package java_Array;
+
+import java.util.Scanner;
+
+public class Array_TimSoLonNhatTrongArray {
+	private static final String SumLe = null;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n;
+		do {
+			System.out.println("nhap do dai cho mang");
+			n = sc.nextInt();
+		} while (n < 0);
+		array(n);
+	}
+
+	public static void array(int n) {
+		Scanner sc = new Scanner(System.in);
+		// nhap gia tri cho mang
+		int arr[] = new int[n];
+		for (int i = 0; i < n; i++) {
+			System.out.println("xac dinh gia tri cho mang arr[" + i + "] = ");
+			arr[i] = sc.nextInt();
+		}
+		// in ra man hinh array
+		for (int i = 0; i < n; i++) {
+			System.out.println(arr[i] + " ");
+		}
+		// tim so lon nhat trong mang
+		int max;
+		max = arr[0];
+		for (int i = 0; i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+			}
+		}
+		System.out.println("so lon nhat la " + max);
+		// tinh tong phan tu dau tien va phan tu cuoi
+		int Sum = 0;
+		Sum = arr[0] + arr[n - 1];
+		System.out.println("tong cua phan tu dau va phan tu cuoi " + Sum);
+		// tinh tổng các số lẻ trong mảng
+		int SumLe = 0;
+		int i = 0;
+		if (arr[i] % 2 != 0) {
+			for (int i1 = 0; i1 < arr.length; i1++) {
+				SumLe += arr[i1];
+			}
+		}
+
+		System.out.println("tổng các số lẻ trong mảng " + SumLe);
+	}
+}
